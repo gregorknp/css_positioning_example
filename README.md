@@ -11,6 +11,10 @@ Given the following html file:
 
 ![](images/original_html.png)
 
-We can add code inside the <style> tag.
+We are only allowed to change code inside the <style> tag.
+
+
+
+
 
 
