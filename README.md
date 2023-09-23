@@ -114,6 +114,126 @@ Finally, we have fixed positioning. What this does is to place the element relat
 
 ![](images/blue_box_fixed.png)
 
+Now that we have reviewed the different values of the position property, we will use the relative positioning for the blue-box div.
+
+Next, we have to create a red circle. This red circle is a div element tagged as "red-circle" class and it is a child of blue-box. This means it is contained inside blue-box so it acts as a boundary regarding the position of red-circle.
+
+Note that in order to create a perfect circle in ccs we just have to add the **border-radious** property and give it a value of 50%.
+
+Now, let's play with the position property. If we were to use the dafult positioning (static) and given that the circle is the firts (and only) element inside blue-box, it would position in the top left corner of blue-box:
+
+```html
+  <style>
+    .blue-box {
+      width: 500px;               /* width of 500 pixels */          
+      height: 300px;              /* height of 300 pixels */
+      background-color: blue;   /* blue as background color */
+      position: relative;         /* Element positioned relatively to its default position */
+      left: 200px;                /* element pushed 200 pixels from the left */
+      top: 200px;                 /* element pushed 200 pixels from the top */
+    }
+  .red-circle {
+      width: 200px;               /* width of 200 pixels */
+      height: 200px;              /* height of 200 pixels */
+      background-color: red;    /* red as background color */
+      border-radius: 50%;         /* 50% radious makes a perfect circle */
+      left: 250px;                /* element pushed 250 pixels from the left */
+      top: 150px;                 /* element pushed 150 pixels from the top */
+    }
+</style>
+```
+
+![](images/red_circle_static.png)
+
+Again, the top and left properties have no effect.
+
+Using **relative** positioning, the circle will move 50 pixels from the left and 150 pixels from the top of its default position so it matches the desired final position.
+
+```html
+  <style>
+    .blue-box {
+      width: 500px;               /* width of 500 pixels */          
+      height: 300px;              /* height of 300 pixels */
+      background-color: blue;   /* blue as background color */
+      position: relative;         /* Element positioned relatively to its default position */
+      left: 200px;                /* element pushed 200 pixels from the left */
+      top: 200px;                 /* element pushed 200 pixels from the top */
+    }
+  .red-circle {
+      width: 200px;               /* width of 200 pixels */
+      height: 200px;              /* height of 200 pixels */
+      background-color: red;    /* red as background color */
+      border-radius: 50%;         /* 50% radious makes a perfect circle */
+      position: relative;         /* Position relative to its default position */
+      left: 250px;                /* element pushed 250 pixels from the left */
+      top: 150px;                 /* element pushed 150 pixels from the top */
+    }
+  </style>
+```
+
+![](images/red_circle_relative.png)
+
+Using **absolute** positioning has the same effect. As we said before, absolute positioning places the element relative to the nearest ancestor with the position property set or relative to the top left corner of the browser. As blue-box has the position property set to relative, red-circle is moved 250 pixels and 150 pixels from the top left corner of blue-box:
+
+```html
+  <style>
+    .blue-box {
+      width: 500px;               /* width of 500 pixels */          
+      height: 300px;              /* height of 300 pixels */
+      background-color: blue;   /* blue as background color */
+      position: relative;         /* Element positioned relatively to its default position */
+      left: 200px;                /* element pushed 200 pixels from the left */
+      top: 200px;                 /* element pushed 200 pixels from the top */
+    }
+    .red-circle {
+      width: 200px;               /* width of 200 pixels */
+      height: 200px;              /* height of 200 pixels */
+      background-color: red;    /* red as background color */
+      border-radius: 50%;         /* 50% radious makes a perfect circle */
+      position: absolute;         /* Position relative to blue-box */
+      left: 250px;                /* element pushed 250 pixels from the left */
+      top: 150px;                 /* element pushed 150 pixels from the top */
+    }
+</style>
+```
+
+![](images/red_circle_absolute.png)
+
+Finally, if we were to use **fixed** as positioning, the red circle would be positioned fixed relative to the top left corner of the screen, 250 pixels to the right and 150 pixels to the bottom: 
+
+```html
+  <style>
+    .blue-box {
+      width: 500px;               /* width of 500 pixels */          
+      height: 300px;              /* height of 300 pixels */
+      background-color: blue;   /* blue as background color */
+      position: relative;         /* Element positioned relatively to its default position */
+      left: 200px;                /* element pushed 200 pixels from the left */
+      top: 200px;                 /* element pushed 200 pixels from the top */
+    }
+  .red-circle {
+      width: 200px;               /* width of 200 pixels */
+      height: 200px;              /* height of 200 pixels */
+      background-color: red;    /* red as background color */
+      border-radius: 50%;         /* 50% radious makes a perfect circle */
+      position: fixed;            /* Position fixed relative to the top left corner of the screen */
+      left: 250px;                /* element pushed 250 pixels from the left */
+      top: 150px;                 /* element pushed 150 pixels from the top */
+    }
+</style>
+```
+
+![](images/red_circle_fixed.png)
+
+So, regarding red-circle element, we will stick with relative positioning although we could use absolute as well.
+
+## What have we learnt in this exercise?
+
+- The different values of the **position** property and how they behave.
+- How to create a perfect circle using ccs styling.
+- The **left** and **top** properties.
+
+
 
 
 
